@@ -32,6 +32,12 @@ const subtractScore2 = subtractOneFromTwo => {
   console.log(subTeam2)
   document.querySelector('.team-2-score').textContent = subTeam2
 }
+const teamName2 = changeTeam2 => {
+  const newNameTwo = document.querySelector('.team-2-input').value
+  const replaceName2 = newNameTwo
+  console.log(replaceName2)
+  document.querySelector('.team-2-name').textContent = replaceName2
+}
 
 // team1
 const calculateNewScore1 = () => {
@@ -51,6 +57,9 @@ const calculateSecondNewScore1 = () => {
 const calculateSecondNewScore2 = () => {
   subtractScore2()
 }
+const newTeamName2 = () => {
+  teamName2()
+}
 
 document.addEventListener('DOMContentLoaded', main)
 
@@ -60,13 +69,17 @@ document
 document
   .querySelector('.team-1-subtract-1-button')
   .addEventListener('click', calculateNewScore2)
-
 document
   .querySelector('.update-team-1-name')
   .addEventListener('click', newTeamName1)
+
+// team 2
 document
   .querySelector('.team-2-add-1-button')
   .addEventListener('click', calculateSecondNewScore1)
 document
   .querySelector('.team-2-subtract-1-button')
   .addEventListener('click', calculateSecondNewScore2)
+document
+  .querySelector('.update-team-2-name')
+  .addEventListener('click', newTeamName2)
