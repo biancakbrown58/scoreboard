@@ -1,17 +1,26 @@
 const main = () => {}
+// add team 1
 const calculateScore1 = addOne => {
   console.log(addOne + 'button clicked')
   const teamOneScore = document.querySelector('.team-1-score').textContent
   const total = parseInt(teamOneScore) + 1
+  if (total >= 21) {
+    document.querySelector('.team-1-add-1-button').disabled = true
+  }
   console.log(total)
   document.querySelector('.team-1-score').textContent = total
 }
+// subtract team 1
 const subtractScore1 = subtractOne => {
   const teamOneSubtract = document.querySelector('.team-1-score').textContent
   const total2 = parseInt(teamOneSubtract) - 1
+  if (total2 <= 0) {
+    document.querySelector('.team-1-subtract-1-button').disabled = true
+  }
   console.log(total2)
   document.querySelector('.team-1-score').textContent = total2
 }
+// change team 1 name
 const teamName1 = changeTeam1 => {
   const newNameOne = document.querySelector('input').value
   const replaceName1 = newNameOne
@@ -23,12 +32,19 @@ const teamName1 = changeTeam1 => {
 const calculateSecondScore = addOneToTwo => {
   const teamTwoScore = document.querySelector('.team-2-score').textContent
   const totalTeam2 = parseInt(teamTwoScore) + 1
+  // new
+  if (totalTeam2 >= 21) {
+    document.querySelector('.team-2-add-1-button').disabled = true
+  }
   console.log(totalTeam2)
   document.querySelector('.team-2-score').textContent = totalTeam2
 }
 const subtractScore2 = subtractOneFromTwo => {
   const teamTwoSub = document.querySelector('.team-2-score').textContent
   const subTeam2 = parseInt(teamTwoSub) - 1
+  if (subTeam2 <= 0) {
+    document.querySelector('.team-2-subtract-1-button').disabled = true
+  }
   console.log(subTeam2)
   document.querySelector('.team-2-score').textContent = subTeam2
 }
